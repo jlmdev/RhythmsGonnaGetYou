@@ -73,13 +73,13 @@ namespace RhythmsGonnaGetYou
                 Console.WriteLine("View all bands that are unsigned (vu)");
                 Console.WriteLine("Quit Program (q)");
 
-                // TODO: Create Menu Options switch statement
+                // Create Menu Options switch statement
                 // Get Option from user
                 var optionSelected = Console.ReadLine();
 
                 switch (optionSelected)
                 {
-                    //      TODO: Option: Add a new band (ab)
+                    // Option: Add a new band (ab)
                     case "ab":
                         // Get input from user
                         Console.Write("Band Name: ");
@@ -124,7 +124,7 @@ namespace RhythmsGonnaGetYou
                         context.Bands.Add(newBand);
                         context.SaveChanges();
                         break;
-                    //      TODO: Option: View all bands (vb)
+                    // Option: View all bands (vb)
                     case "vb":
                         // Select and display all of the bands
                         foreach (var band in bands)
@@ -135,7 +135,7 @@ namespace RhythmsGonnaGetYou
                         Console.Write("press 'enter' to continue");
                         var doneWithBandDisplay = Console.ReadLine();
                         break;
-                    //      TODO: Option: Add an album for a band (aa)
+                    // Option: Add an album for a band (aa)
                     case "aa":
                         // Add an album for a band
                         Console.Write("Title: ");
@@ -171,7 +171,7 @@ namespace RhythmsGonnaGetYou
                         context.Albums.Add(newAlbum);
                         context.SaveChanges();
                         break;
-                    //      TODO: Option: Unsign a band (u)
+                    // Option: Unsign a band (u)
                     case "u":
                         // Unsign a band
                         Console.WriteLine("Band to Unsign: ");
@@ -184,7 +184,7 @@ namespace RhythmsGonnaGetYou
                             context.SaveChanges();
                         }
                         break;
-                    //      TODO: Option: Re-sign a band (r)
+                    // Option: Re-sign a band (r)
                     case "r":
                         // Sign a band
                         Console.WriteLine("Band to Re-sign");
@@ -197,7 +197,7 @@ namespace RhythmsGonnaGetYou
                             context.SaveChanges();
                         }
                         break;
-                    //      TODO: Option: View all albums for a band (vab)
+                    // Option: View all albums for a band (vab)
                     case "vab":
                         // Given a band name, view all their albums
                         Console.Write("Band to list albums for: ");
@@ -220,7 +220,7 @@ namespace RhythmsGonnaGetYou
                         Console.ReadLine();
 
                         break;
-                    //      TODO: Option: View all albums sorted by release date (vaa)
+                    // Option: View all albums sorted by release date (vaa)
                     case "vaa":
                         // View all albums ordered by their release date
                         var albumsByReleaseDate = context.Albums.OrderBy(album => album.ReleaseDate);
@@ -232,7 +232,7 @@ namespace RhythmsGonnaGetYou
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
                         break;
-                    //      TODO: Option: View all bands that are signed (vs)
+                    // Option: View all bands that are signed (vs)
                     case "vs":
                         // View all bands that are signed
                         var signedBands = context.Bands.Where(band => band.IsSigned == true);
@@ -243,7 +243,7 @@ namespace RhythmsGonnaGetYou
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
                         break;
-                    //      TODO: Option: View all bands that are unsigned (vu)
+                    // Option: View all bands that are unsigned (vu)
                     case "vu":
                         // View all bands that are unSigned
                         var unsignedBands = context.Bands.Where(band => band.IsSigned == false);
@@ -254,7 +254,7 @@ namespace RhythmsGonnaGetYou
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
                         break;
-                    //      TODO: Option: Quit Program (q)
+                    // Option: Quit Program (q)
                     case "q":
                         runProgram = false;
                         break;
