@@ -71,7 +71,7 @@ namespace RhythmsGonnaGetYou
                 Console.WriteLine("View all albums sorted by release date (vaa)");
                 Console.WriteLine("View all bands that are signed (vs)");
                 Console.WriteLine("View all bands that are unsigned (vu)");
-                Console.WriteLine("Quit Program");
+                Console.WriteLine("Quit Program (q)");
 
                 // TODO: Create Menu Options switch statement
                 // Get Option from user
@@ -126,6 +126,14 @@ namespace RhythmsGonnaGetYou
                         break;
                     //      TODO: Option: View all bands (vb)
                     case "vb":
+                        // Select and display all of the bands
+                        foreach (var band in bands)
+                        {
+                            Console.WriteLine($"{band.Name}");
+                        }
+                        // pause to leave the display up to read
+                        Console.Write("press 'enter' to continue");
+                        var doneWithBandDisplay = Console.ReadLine();
                         break;
                     //      TODO: Option: Add an album for a band (aa)
                     case "aa":
@@ -148,7 +156,7 @@ namespace RhythmsGonnaGetYou
                     //      TODO: Option: View all bands that are unsigned (vu)
                     case "vu":
                         break;
-                    //      TODO: Option: Quit Program
+                    //      TODO: Option: Quit Program (q)
                     case "q":
                         runProgram = false;
                         break;
