@@ -137,9 +137,50 @@ namespace RhythmsGonnaGetYou
                         break;
                     //      TODO: Option: Add an album for a band (aa)
                     case "aa":
+                        // Add an album for a band
+                        Console.Write("Title: ");
+                        var newTitle = Console.ReadLine();
+                        Console.Write("Explicit Lyrics? (y/n): ");
+                        var newIsExplicit = true;
+                        var newIsExplicitYN = Console.ReadLine();
+                        if (newIsExplicitYN == "y")
+                        {
+                            newIsExplicit = true;
+                        }
+                        else
+                        {
+                            newIsExplicit = false;
+                        }
+                        Console.Write("Release Date Year: ");
+                        var releaseYear = int.Parse(Console.ReadLine());
+                        Console.Write("Release Date Month: ");
+                        var releaseMonth = int.Parse(Console.ReadLine());
+                        Console.Write("Release Date Day: ");
+                        var releaseDay = int.Parse(Console.ReadLine());
+                        Console.Write("Band Name: ");
+                        var userInputAlbumBandName = Console.ReadLine();
+                        var albumBand = bands.FirstOrDefault(band => band.Name == userInputAlbumBandName);
+                        var albumBandId = albumBand.Id;
+                        var newAlbum = new Album
+                        {
+                            Title = newTitle,
+                            IsExplicit = newIsExplicit,
+                            ReleaseDate = new DateTime(releaseYear, releaseMonth, releaseDay),
+                            BandId = albumBandId
+                        };
+                        context.Albums.Add(newAlbum);
+                        context.SaveChanges();
                         break;
                     //      TODO: Option: Unsign a band (u)
                     case "u":
+                        // Unsign a band
+                        // var unsignThisBand = context.Bands.FirstOrDefault(band => band.Name == "Spinal Tap");
+
+                        // if (unsignThisBand != null)
+                        // {
+                        //     unsignThisBand.IsSigned = false;
+                        //     context.SaveChanges();
+                        // }
                         break;
                     //      TODO: Option: Re-sign a band (r)
                     case "r":
