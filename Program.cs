@@ -56,19 +56,66 @@ namespace RhythmsGonnaGetYou
             while (runProgram)
             {
                 // TODO: Show Menu
-                // TODO: Create Menu Options
-                //      TODO: Option: Add a new band (ab)
-                //      TODO: Option: View all bands (vb)
-                //      TODO: Option: Add an album for a band (aa)
-                //      TODO: Option: Unsign a band (u)
-                //      TODO: Option: Re-sign a band (r)
+                // Clear the console
+                Console.Clear();
 
+                // Display the menu options
+                Console.WriteLine("*** Main Menu ***");
+                Console.WriteLine("Options:");
+                Console.WriteLine("Add a new band (ab)");
+                Console.WriteLine("View all bands (vb)");
+                Console.WriteLine("Add an album for a band (aa)");
+                Console.WriteLine("Unsign a band (u)");
+                Console.WriteLine("Re-sign a band (r)");
+                Console.WriteLine("View all albums for a band (vab)");
+                Console.WriteLine("View all albums sorted by release date (vaa)");
+                Console.WriteLine("View all bands that are signed (vs)");
+                Console.WriteLine("View all bands that are unsigned (vu)");
+                Console.WriteLine("Quit Program");
 
+                // TODO: Create Menu Options switch statement
+                // Get Option from user
+                var optionSelected = Console.ReadLine();
 
+                switch (optionSelected)
+                {
+                    //      TODO: Option: Add a new band (ab)
+                    case "ab":
+                        break;
+                    //      TODO: Option: View all bands (vb)
+                    case "vb":
+                        break;
+                    //      TODO: Option: Add an album for a band (aa)
+                    case "aa":
+                        break;
+                    //      TODO: Option: Unsign a band (u)
+                    case "u":
+                        break;
+                    //      TODO: Option: Re-sign a band (r)
+                    case "r":
+                        break;
+                    //      TODO: Option: View all albums for a band (vab)
+                    case "vab":
+                        break;
+                    //      TODO: Option: View all albums sorted by release date (vaa)
+                    case "vaa":
+                        break;
+                    //      TODO: Option: View all bands that are signed (vs)
+                    case "vs":
+                        break;
+                    //      TODO: Option: View all bands that are unsigned (vu)
+                    case "vu":
+                        break;
+                    //      TODO: Option: Quit Program
+                    case "q":
+                        runProgram = false;
+                        break;
+                    default:
+                        break;
 
-
-
+                }
             }
+            Console.WriteLine("*** Goodbye ***");
         }
 
     }
