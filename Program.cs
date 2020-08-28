@@ -174,19 +174,51 @@ namespace RhythmsGonnaGetYou
                     //      TODO: Option: Unsign a band (u)
                     case "u":
                         // Unsign a band
-                        // var unsignThisBand = context.Bands.FirstOrDefault(band => band.Name == "Spinal Tap");
+                        Console.WriteLine("Band to Unsign: ");
+                        var getBandToUnsign = Console.ReadLine();
+                        var unsignThisBand = context.Bands.FirstOrDefault(band => band.Name == getBandToUnsign);
 
-                        // if (unsignThisBand != null)
-                        // {
-                        //     unsignThisBand.IsSigned = false;
-                        //     context.SaveChanges();
-                        // }
+                        if (unsignThisBand != null)
+                        {
+                            unsignThisBand.IsSigned = false;
+                            context.SaveChanges();
+                        }
                         break;
                     //      TODO: Option: Re-sign a band (r)
                     case "r":
+                        // Sign a band
+                        Console.WriteLine("Band to Re-sign");
+                        var getBandToSign = Console.ReadLine();
+                        var signThisBand = context.Bands.FirstOrDefault(band => band.Name == getBandToSign);
+
+                        if (signThisBand != null)
+                        {
+                            signThisBand.IsSigned = true;
+                            context.SaveChanges();
+                        }
                         break;
                     //      TODO: Option: View all albums for a band (vab)
                     case "vab":
+                        // Given a band name, view all their albums
+                        Console.Write("Band to list albums for: ");
+                        var getAllBandAlbumsFor = Console.ReadLine();
+                        var bandNameSelector = bands.FirstOrDefault(band => band.Name == getAllBandAlbumsFor);
+                        if (bandNameSelector != null)
+                        {
+                            var bandNameId = bandNameSelector.Id;
+                            var bandAlbums = context.Albums.Where(album => album.BandId == bandNameId);
+                            foreach (var bandAlbum in bandAlbums)
+                            {
+                                Console.WriteLine(bandAlbum.Title);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("That band isn't in our database.");
+                        }
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
+
                         break;
                     //      TODO: Option: View all albums sorted by release date (vaa)
                     case "vaa":
