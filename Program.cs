@@ -233,9 +233,25 @@ namespace RhythmsGonnaGetYou
                         break;
                     //      TODO: Option: View all bands that are signed (vs)
                     case "vs":
+                        // View all bands that are signed
+                        var signedBands = context.Bands.Where(band => band.IsSigned == true);
+                        foreach (var band in signedBands)
+                        {
+                            Console.WriteLine(band.Name);
+                        }
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
                         break;
                     //      TODO: Option: View all bands that are unsigned (vu)
                     case "vu":
+                        // View all bands that are unSigned
+                        var unsignedBands = context.Bands.Where(band => band.IsSigned == false);
+                        foreach (var band in unsignedBands)
+                        {
+                            Console.WriteLine(band.Name);
+                        }
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
                         break;
                     //      TODO: Option: Quit Program (q)
                     case "q":
