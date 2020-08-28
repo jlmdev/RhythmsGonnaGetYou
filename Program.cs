@@ -222,6 +222,14 @@ namespace RhythmsGonnaGetYou
                         break;
                     //      TODO: Option: View all albums sorted by release date (vaa)
                     case "vaa":
+                        // View all albums ordered by their release date
+                        var albumsByReleaseDate = context.Albums.OrderBy(album => album.ReleaseDate);
+                        foreach (var album in albumsByReleaseDate)
+                        {
+                            Console.WriteLine($"{album.Title} : {album.ReleaseDate}");
+                        }
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
                         break;
                     //      TODO: Option: View all bands that are signed (vs)
                     case "vs":
