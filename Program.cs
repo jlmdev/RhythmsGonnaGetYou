@@ -81,6 +81,48 @@ namespace RhythmsGonnaGetYou
                 {
                     //      TODO: Option: Add a new band (ab)
                     case "ab":
+                        // Get input from user
+                        Console.Write("Band Name: ");
+                        var newBandName = Console.ReadLine();
+                        Console.Write("Country of Origin: ");
+                        var newCountryOfOrigin = Console.ReadLine();
+                        Console.Write("Number of Members: ");
+                        var newNumberOfMembers = int.Parse(Console.ReadLine());
+                        Console.Write("Website: ");
+                        var newWebsite = Console.ReadLine();
+                        Console.Write("Style: ");
+                        var newStyle = Console.ReadLine();
+                        Console.Write("Is the band signed? (y/n): ");
+                        var newIsSigned = true;
+                        var newIsSignedYN = Console.ReadLine();
+                        if (newIsSignedYN == "y")
+                        {
+                            newIsSigned = true;
+                        }
+                        else
+                        {
+                            newIsSigned = false;
+                        }
+                        Console.Write("Contact Name: ");
+                        var newContactName = Console.ReadLine();
+                        Console.Write("Contact Phone Number: ");
+                        var newContactPhoneNumber = Console.ReadLine();
+
+                        // Add a new band
+                        var newBand = new Band
+                        {
+                            Name = newBandName,
+                            CountryOfOrigin = newCountryOfOrigin,
+                            NumberOfMembers = newNumberOfMembers,
+                            Website = newWebsite,
+                            Style = newStyle,
+                            IsSigned = newIsSigned,
+                            ContactName = newContactName,
+                            ContactPhoneNumber = newContactPhoneNumber
+                        };
+
+                        context.Bands.Add(newBand);
+                        context.SaveChanges();
                         break;
                     //      TODO: Option: View all bands (vb)
                     case "vb":
