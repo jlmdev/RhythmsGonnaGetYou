@@ -226,7 +226,8 @@ namespace RhythmsGonnaGetYou
                         var albumsByReleaseDate = context.Albums.OrderBy(album => album.ReleaseDate);
                         foreach (var album in albumsByReleaseDate)
                         {
-                            Console.WriteLine($"{album.Title} : {album.ReleaseDate}");
+                            var dateOnly = album.ReleaseDate.ToString("MM/dd/yyyy");
+                            Console.WriteLine($"{album.Title} : {dateOnly}");
                         }
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
